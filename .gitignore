@@ -20,3 +20,6 @@ __pycache__/
 .workspace/
 Thumbs.db
 Desktop.ini
+
+# 5. TEMPORARY SHIELD (Remove before production commit)
+docs/
