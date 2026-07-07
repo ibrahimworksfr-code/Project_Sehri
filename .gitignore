@@ -21,5 +21,8 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 
-# 5. TEMPORARY SHIELD (Remove before production commit)
-docs/
+# IDE & Tooling Configs
+*.toml
+*.yaml
+*.yml
+
