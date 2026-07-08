@@ -108,7 +108,9 @@ def run_propensity_pipeline(df_silver: pd.DataFrame) -> None:
     train_penalized_logit(X_sm, y_sm)
 
 if __name__ == "__main__":
-    PROJECT_ROOT = r"C:\Node2_Workspace\03_Projects\Project_Sehri"
+    # Dynamically locate the root directory regardless of where the repo is cloned
+    CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
     SILVER_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "sehri_silver_features.parquet")
     
     if os.path.exists(SILVER_PATH):

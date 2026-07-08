@@ -62,7 +62,9 @@ def load_and_validate_silver_layer(filepath: str) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # Test execution
-    PROJECT_ROOT = r"C:\Node2_Workspace\03_Projects\Project_Sehri"
+    # Dynamically locate the root directory regardless of where the repo is cloned
+    CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
     SILVER_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "sehri_silver_features.parquet")
     
     try:

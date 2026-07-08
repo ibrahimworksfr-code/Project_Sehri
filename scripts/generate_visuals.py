@@ -5,8 +5,10 @@ import pandas as pd
 import os
 
 # Create images directory using a strict Absolute Path
-project_root = r"C:\Node2_Workspace\03_Projects\Project_Sehri"
-output_dir = os.path.join(project_root, "docs", "images")
+# Dynamically locate the root directory regardless of where the repo is cloned
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
+output_dir = os.path.join(PROJECT_ROOT, "docs", "images")
 os.makedirs(output_dir, exist_ok=True)
 
 # 1. Aesthetic Constraints (White Paper / Big 4 Style)
