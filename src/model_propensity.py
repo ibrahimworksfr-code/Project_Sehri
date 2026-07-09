@@ -60,7 +60,7 @@ def generate_digital_twin(X: pd.DataFrame, y: pd.Series) -> Tuple[pd.DataFrame, 
     logging.info(f"Initializing SMOTEN. Original Class Distribution: {y.value_counts().to_dict()}")
     
     # K_neighbors explicitly set to handle the extreme sparsity of the positive class (N=7)
-    smoten = SMOTEN(random_state=42, k_neighbors=4)
+    smoten = SMOTEN(sampling_strategy={0: 5000, 1: 5000}, random_state=42, k_neighbors=4)
     X_resampled, y_resampled = smoten.fit_resample(X, y)
     
     logging.info(f"Synthetic Generation Complete. New Class Distribution: {y_resampled.value_counts().to_dict()}")
